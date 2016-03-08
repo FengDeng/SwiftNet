@@ -102,7 +102,7 @@
 	
 ##Cocoapods
 
-
+	pod 'SwiftNet', git: 'https://github.com/FengDeng/SwiftNet.git'
 
 ##使用的第三方库
 	
