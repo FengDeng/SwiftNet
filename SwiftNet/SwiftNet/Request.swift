@@ -83,27 +83,27 @@ public class Request{
 // MARK: - Request Parameters
 extension Request{
     //setting
-    func method(method:Alamofire.Method)->Self{
+    public func method(method:Alamofire.Method)->Self{
         self.method = method
         return self
     }
     
-    func parameters(parameters:[String: AnyObject])->Self{
+    public func parameters(parameters:[String: AnyObject])->Self{
         self.parameters = parameters
         return self
     }
     
-    func encoding(encoding:ParameterEncoding)->Self{
+    public func encoding(encoding:ParameterEncoding)->Self{
         self.encoding = encoding
         return self
     }
     
-    func headers(headers:[String: String])->Self{
+    public func headers(headers:[String: String])->Self{
         self.headers = headers
         return self
     }
     
-    func config(config:Bool)->Self{
+    public func config(config:Bool)->Self{
         self.config = config
         return self
     }
@@ -114,17 +114,17 @@ extension Request{
 // MARK: - Life Circle
 extension Request{
     //life
-    func beforeValidate(beforeValidate:setBefore)->Self{
+    public func beforeValidate(beforeValidate:setBefore)->Self{
         self.beforeValidate = beforeValidate
         return self
     }
     
-    func validate(validate:setValidate)->Self{
+    public func validate(validate:setValidate)->Self{
         self.validate = validate
         return self
     }
     
-    func beforeRequest(beforeRequest:setBefore)->Self{
+    public func beforeRequest(beforeRequest:setBefore)->Self{
         self.beforeRequest = beforeRequest
         return self
     }
@@ -132,7 +132,7 @@ extension Request{
 
 // MARK: - JSON
 extension Request{
-    func responseJSON<K : ModelJSONType>(modelClass:K.Type)->Observable<K>{
+    public func responseJSON<K : ModelJSONType>(modelClass:K.Type)->Observable<K>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -167,7 +167,7 @@ extension Request{
         })
     }
     
-    func responseJSON()->Observable<AnyObject?>{
+    public func responseJSON()->Observable<AnyObject?>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -199,7 +199,7 @@ extension Request{
 
 // MARK: - String
 extension Request{
-    func responseString<K : ModelStringType>(modelClass:K.Type,encoding:NSStringEncoding? = nil)->Observable<K>{
+    public func responseString<K : ModelStringType>(modelClass:K.Type,encoding:NSStringEncoding? = nil)->Observable<K>{
         return Observable.create({ /*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -232,7 +232,7 @@ extension Request{
             }
         })
     }
-    func responseString(encoding:NSStringEncoding? = nil)->Observable<String?>{
+    public func responseString(encoding:NSStringEncoding? = nil)->Observable<String?>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -264,7 +264,7 @@ extension Request{
 
 // MARK: - Data
 extension Request{
-    func responseData<K : ModelDataType>(modelClass:K.Type)->Observable<K>{
+    public func responseData<K : ModelDataType>(modelClass:K.Type)->Observable<K>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -298,7 +298,7 @@ extension Request{
         })
     }
     
-    func responseData()->Observable<NSData?>{
+    public func responseData()->Observable<NSData?>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -330,7 +330,7 @@ extension Request{
 
 // MARK: - Default Response
 extension Request{
-    func response<K : ModelDefaultType>(modelClass:K.Type)->Observable<K>{
+    public func response<K : ModelDefaultType>(modelClass:K.Type)->Observable<K>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -364,7 +364,7 @@ extension Request{
         })
     }
     
-    func response()->Observable<(NSURLRequest?, NSHTTPURLResponse?, NSData?)>{
+    public func response()->Observable<(NSURLRequest?, NSHTTPURLResponse?, NSData?)>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -396,7 +396,7 @@ extension Request{
 
 // MARK: - PropertyList
 extension Request{
-    func responsePropertyList<K : ModelPropertyListType>(modelClass:K.Type,options:NSPropertyListReadOptions = NSPropertyListReadOptions())->Observable<K>{
+    public func responsePropertyList<K : ModelPropertyListType>(modelClass:K.Type,options:NSPropertyListReadOptions = NSPropertyListReadOptions())->Observable<K>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
@@ -430,7 +430,7 @@ extension Request{
         })
     }
     
-    func responsePropertyList(options:NSPropertyListReadOptions = NSPropertyListReadOptions())->Observable<AnyObject?>{
+    public func responsePropertyList(options:NSPropertyListReadOptions = NSPropertyListReadOptions())->Observable<AnyObject?>{
         return Observable.create({/*[weak /*weakSelf*/self = self]*/ observer -> Disposable in
             /*guard let /*weakSelf*/self = /*weakSelf*/self else {
             observer.on(.Completed)
