@@ -2,6 +2,10 @@
 直接可用的Swift 网络库。
 
 
+###没想到还有人用的。这个不维护了。新建链接可以看看
+[CNNetwork](https://github.com/FengDeng/CNNetwork)
+
+
 ##Request
 
 采用链式调用配置Request
